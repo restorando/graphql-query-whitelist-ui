@@ -1,0 +1,1 @@
+# graphql-query-whitelisting-ui
