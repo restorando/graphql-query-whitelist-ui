@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+head
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css')
+
+  style.
+    body {
+      background:#fff;
+      font-size: 16px;
+      color: #555;
+    }
+    .list {}
+    .list-item {
+      background: #fff;
+      border-radius: 5px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border: 2px solid #e2e2e2;
+      border-left: 5px solid #ccc;
+      position: relative;
+    }
+    header{
+      text-align: center;
+    }
+    .column{
+      width: 100%;
+      max-width: 800px;
+      margin: auto;
+      padding: 0 15px
+    }
+    .query-info, .full-query {
+      padding: 18px;
+      position: relative;
+    }
+    .delete{
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      border: 2px solid #b9b9b9;
+      transform: translateY(-50%);
+      width: 26px;
+      height: 26px;
+      background: #ccc;
+      border-radius: 50%;
+      padding: 0;
+      margin: 0;
+      align-self: flex-end;
+      cursor: pointer;
+    }
+    .delete:after, .delete:before{
+      position: absolute;
+      top: 6px;
+      left: 12px;
+      content: '';
+      width: 2px;
+      height: 14px;
+      background: #999;
+    }
+    .delete:after{
+      transform: rotate(45deg);
+    }
+    .delete:before{
+      transform: rotate(-45deg);
+    }
+    .query-input{
+      display: block;
+      border: 2px solid #e2e2e2;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      min-height: 120px;
+      padding: 10px;
+    }
+
+    .new-query{
+      display: flex;
+      flex-direction: column;
+    }
+    button{
+      color: #fff;
+      margin-bottom: 10px;
+      align-self: flex-end;
+      width: 130px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 5px;
+      background: #666;
+      border: 0;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+    .title{
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    button:hover{
+      background: #333;
+    }
+    button:focus{
+      outline: 2px solid #ccc;
+      border-radius: 5px;
+    }
+    .full-query {
+      display: block;
+      margin: 0;
+      padding: 15px;
+      background-color: darkgrey;
+      color: white;
+    }
+
+
+
+
+
+
+body
+  header
+    h1 GraphQL Whitelist
+  .column
+    .new-query
+      button add query
+      textarea.hidden.query-input
+
+    .list
+      .list-item
+        .query-info
+          .title FJJ3cIcLjvOBIyw6Q7jQpl1IIDPIeNPnakYVHM35orY=
+          .delete
+        pre.full-query.
+          query JoacoQuery {
+            firstName
+            lastName
+          }
