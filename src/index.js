@@ -6,7 +6,7 @@ import whitelistUI from './app'
 import express from 'express'
 
 const app = express()
-app.use('/whitelist', whitelistUI)
+app.use('/', whitelistUI)
 
 const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 3001
