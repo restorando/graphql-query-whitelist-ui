@@ -3,10 +3,10 @@ import Header from './header'
 import NewQuery from './new-query'
 import Query from './query'
 
-export default ({ queries = [] }) => (
+export default ({ queries = [], schema }) => (
   <div className='wrapper'>
     <Header />
-    <NewQuery />
+    <NewQuery schema={schema} />
 
     {
       queries.map(({ id, query }) => (

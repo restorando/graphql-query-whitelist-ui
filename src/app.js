@@ -28,7 +28,8 @@ if (process.env.NODE_ENV === 'development') {
     module: {
       loaders: [{
         test: /\.jsx?$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: /node_modules/
       }]
     }
   })
@@ -47,6 +48,11 @@ app.get('/', (req, res) => {
 app.get('/queries', (req, res) => {
   const queries = store.entries()
   res.json(queries)
+})
+
+app.post('/queries', async (req, res) => {
+  const hash = await store.put(req.body.query)
+  res.json(store.get(hash))
 })
 
 export default app

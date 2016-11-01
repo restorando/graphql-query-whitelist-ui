@@ -100,3 +100,22 @@ button:focus {
 .hidden {
   display: none;
 }
+.query-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.query-buttons > button {
+  margin: 10px;
+}
+
+.query-editor {
+  border: 2px solid #e2e2e2;
+  border-radius: 5px;
+  overflow: hidden
+}
+
+.codemirror-hidden {
+  height: 0;
+  overflow: hidden
+}
