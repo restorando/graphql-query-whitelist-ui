@@ -41,8 +41,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 app.get('/', (req, res) => {
-  const reactOutput = renderToString(<App />)
-  res.render('index', { reactOutput })
+  // const reactOutput = renderToString(<App />)
+  res.render('index')//, { reactOutput })
 })
 
 app.get('/queries', (req, res) => {
