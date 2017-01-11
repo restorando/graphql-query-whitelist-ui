@@ -1,12 +1,12 @@
 {
   "name": "graphql-query-whitelist-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "UI to manage queries for graphql-query-whitelisting middleware",
   "main": "./dist/index.js",
   "scripts": {
     "lint": "eslint .",
-    "build": "NODE_ENV=production mkdir -p dist/static dist/views && cp -v src/static/*.css dist/static && cp -v src/views/index.ejs dist/views && babel src/index.js --out-file dist/index.js && webpack",
-    "prepublish": "npm run build",
+    "build": "mkdir -p dist/static dist/views && cp -v src/static/*.css dist/static && cp -v src/views/index.ejs dist/views && babel src/index.js --out-file dist/index.js && webpack",
+    "prepublish": "NODE_ENV=production npm run build",
     "server": "babel-node server",
     "dev": "NODE_ENV=development nodemon --exec npm run server"
   },
