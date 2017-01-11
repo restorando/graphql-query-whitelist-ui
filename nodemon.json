@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    "dist/*"
+  ],
+  "watch": [
+    "server.js",
+    "src/index.js"
+  ]
+}
