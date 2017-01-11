@@ -19,7 +19,7 @@ export default (options = {}) => {
 
   app.use(express.static(path.join(__dirname, 'static')))
 
-  app.get('/schema', async (req, res) => {
+  app.get('/schema', async (req, res, next) => {
     if (graphqlSchema) {
       const result = await graphql(graphqlSchema, query)
       if (result.errors) console.error(result.errors)
@@ -39,12 +39,17 @@ export default (options = {}) => {
 
       res.status(response.status).send(body)
     } catch (error) {
-      res.status(500).json({ error: error.message })
+      next(error, req, res)
     }
   })
 
   app.get('/', (req, res) => {
     res.render('index', { apiURL: apiURL || '' })
+  })
+
+  // Error handling
+  app.use((err, req, res, next) => {
+    res.status(500).json({ error: err.message })
   })
 
   return app

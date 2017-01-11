@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Spinner from 'react-spinkit'
 import QueryEditor from './query-editor'
 import classNames from 'classnames'
 import { bindActionCreators } from 'redux'
@@ -18,12 +17,6 @@ class NewQuery extends Component {
     currentQuery: PropTypes.string,
     newQueryErrorMessage: PropTypes.string,
     savingQuery: PropTypes.bool
-  }
-
-  constructor(props) {
-    super(props)
-    this.onAddQueryClick = this.onAddQueryClick.bind(this)
-    this.onCancelClick = this.onCancelClick.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,12 +44,12 @@ class NewQuery extends Component {
     )
   }
 
-  onCancelClick() {
+  onCancelClick = () => {
     this.props.cleanCurrentQuery()
     this.props.toggleQueryForm()
   }
 
-  onAddQueryClick() {
+  onAddQueryClick = () => {
     this.props.postQuery(this.props.currentQuery)
   }
 }
@@ -64,8 +57,8 @@ class NewQuery extends Component {
 const mapDispatchToProps = (dispatch) => bindActionCreators({
   toggleQueryForm, cleanCurrentQuery, setCurrentQuery, postQuery
 }, dispatch)
-const mapStateToProps = ({ formVisible, currentQuery, schema, newQueryErrorMessage, savingQuery }) => {
-  return { formVisible, currentQuery, schema, newQueryErrorMessage, savingQuery }
-}
+
+const mapStateToProps = ({ formVisible, currentQuery, schema, newQueryErrorMessage, savingQuery }) =>
+  ({ formVisible, currentQuery, schema, newQueryErrorMessage, savingQuery })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewQuery)

@@ -15,17 +15,15 @@ export default class Query extends Component {
 
   constructor(props) {
     super(props)
-    this.expandQuery = this.expandQuery.bind(this)
-    this.onToggleStatus = this.onToggleStatus.bind(this)
-    this.onQueryRename = this.onQueryRename.bind(this)
     this.state = {}
   }
 
   render() {
     const { id, query, operationName, enabled } = this.props
+    const { expanded } = this.state
 
     return (
-      <div className={classNames('list-item', { 'fixed-height': !this.state.expanded })}>
+      <div className={classNames('list-item', { 'fixed-height': !expanded })}>
         <div className='query-info'>
           <RIEInput
             className='query-title'
@@ -43,16 +41,16 @@ export default class Query extends Component {
     )
   }
 
-  expandQuery() {
+  expandQuery = () => {
     this.setState({ expanded: true })
   }
 
-  onQueryRename({ operationName }) {
+  onQueryRename = ({ operationName }) => {
     const { onQueryRename, id } = this.props
     onQueryRename(id, operationName)
   }
 
-  onToggleStatus() {
+  onToggleStatus = () => {
     const { onToggleQueryStatusClick, operationName, id, enabled } = this.props
     const operation = enabled ? 'disable' : 'enable'
 

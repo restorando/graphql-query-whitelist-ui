@@ -21,12 +21,6 @@ class App extends Component {
     this.props.dispatch(fetchSchema())
   }
 
-  constructor(props) {
-    super(props)
-    this.onToggleQueryStatusClick = this.onToggleQueryStatusClick.bind(this)
-    this.onQueryRename = this.onQueryRename.bind(this)
-  }
-
   render() {
     const { schema, queries, fetchingQueries } = this.props
 
@@ -51,12 +45,12 @@ class App extends Component {
     )
   }
 
-  onToggleQueryStatusClick(id, status) {
+  onToggleQueryStatusClick = (id, status) => {
     const action = status === 'enable' ? enableQuery : disableQuery
     this.props.dispatch(action(id))
   }
 
-  onQueryRename(id, operationName) {
+  onQueryRename = (id, operationName) => {
     this.props.dispatch(renameQuery(id, operationName))
   }
 }
