@@ -73,10 +73,35 @@ app.get('/whitelist', whitelistUI({
 }))
 ```
 
+## How to run it in development mode
+
+Clone the repo
+
+```
+$ git clone https://github.com/restorando/graphql-query-whitelist-ui.git
+```
+
+Install the dependencies
+
+```
+$ npm i
+```
+
+Run it in dev mode
+
+```
+$ npm run dev
+```
+
 ## Todo
 
 - [ ] Query search box
 - [ ] Pagination
+
+## Contributors
+
+- Javascript by [Gabriel Schammah] (https://github.com/gschammah)
+- Design and CSS by [Joaquín LLuis] (https://github.com/joaquinlluis)
 
 ## License
 

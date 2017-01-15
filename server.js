@@ -18,8 +18,7 @@ const compiler = webpack(require('./webpack.config'))
 app.use(bodyParser.json())
 app.use('/whitelist/api', Api(new MemoryStore()))
 app.use(whitelistUI({
-  apiURL: '/whitelist/api/',
-  graphqlURL: 'http://redo-graphql.staging.restorando.com/graphql?country=ar&region=buenos-aires'
+  apiURL: '/whitelist/api/'
 }))
 
 app.use(require('webpack-dev-middleware')(compiler, {
