@@ -1,6 +1,6 @@
 {
   "name": "graphql-query-whitelist-ui",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "UI to manage queries for graphql-query-whitelisting middleware",
   "main": "./dist/index.js",
   "scripts": {

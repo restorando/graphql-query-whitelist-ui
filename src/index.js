@@ -27,6 +27,8 @@ export default (options = {}) => {
       return res.send(result)
     }
 
+    if (!graphqlURL) return res.end(200)
+
     try {
       const response = await fetch(graphqlURL, {
         body: JSON.stringify({ query }),
