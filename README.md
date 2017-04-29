@@ -35,7 +35,7 @@ app.use('/whitelist/api', Api(new MemoryStore()))
 
  - Addition of whitelisted queries
  - Queries can be enabled/disabled and renamed
- - Query Autocompletion using an internal o external schema
+ - Query Autocompletion using an internal or external schema
  - Query linting using an internal or external schema
 
 ## Options
