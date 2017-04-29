@@ -100,8 +100,8 @@ $ npm run dev
 
 ## Contributors
 
-- Javascript by [Gabriel Schammah] (https://github.com/gschammah)
-- Design and CSS by [Joaquín LLuis] (https://github.com/joaquinlluis)
+- Javascript by [Gabriel Schammah](https://github.com/gschammah)
+- Design and CSS by [Joaquín Lluis](https://github.com/joaquinlluis)
 
 ## License
 
